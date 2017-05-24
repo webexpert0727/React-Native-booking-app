@@ -15,6 +15,7 @@ import styles from './resetPasswordStyle';
 const {height, width} = Dimensions.get('window');
 let emailIcon= require('../assets/email.png');
 let passwordIcon= require('../assets/password.png');
+let backArrow= require('../assets/arrow.png');
 
 export default class resetPassword extends Component {
   static navigationOptions = {
@@ -22,10 +23,14 @@ export default class resetPassword extends Component {
     headerMode: 'none',
     header: null,
   };
+  _navigateToBack(navigate){
+        navigate('signIn');
+  }
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-          <BackNavbar text="RESET PASSWORD"/>
+          <BackNavbar text="RESET PASSWORD" backPage={()=>{this._navigateToBack(navigate)}} imageLeft={backArrow} />
           <Text style={styles.textStyle}>Enter your email to receive verification token.</Text>
           <SignUpRow text="Email" image={emailIcon} width={width/2}/>
           <View style={{ padding:8}}></View>

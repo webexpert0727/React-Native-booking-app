@@ -17,6 +17,7 @@ import BackNavbar from '../components/backNavbar/backNavbar';
 
 let mailBox = require('../assets/email.png');
 let passwordKey = require('../assets/password.png');
+let backArrow= require('../assets/arrow.png');
 const {height, width} = Dimensions.get('window');
 
 export default class signIn extends Component {
@@ -26,17 +27,20 @@ export default class signIn extends Component {
     header: null,
   };
   _navigateToNext(navigate){
-        navigate('signIn');
+        navigate('myProfile');
+  }
+  _navigateToBack(navigate){
+        navigate('login');
   }
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={{flex:1,backgroundColor:'#efefef'}}>
-          <BackNavbar text="SIGN IN"/>
+          <BackNavbar text="SIGN IN" backPage={()=>{this._navigateToBack(navigate)}} imageLeft={backArrow} />
           <SignUpRow text="Email" image={mailBox} width={width/2}/>
           <SignUpRow text="Password" image={passwordKey} width={width/2}/>
           <View style={{marginTop:20}}>
-          	 <ButtonValue value="SIGN IN"/>
+              <ButtonValue value="SIGN IN" nextPage={()=>{this._navigateToNext(navigate)}}/>
         	</View>
         	<TouchableOpacity style={styles.forgotView} onPress={() => navigate('resetPassword')}>
         		  <Text style={styles.forgotPass}>Forgot your password?</Text>

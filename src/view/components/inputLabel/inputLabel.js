@@ -32,6 +32,7 @@ export default class inputLable extends Component {
                 style={{width:this.props.width, height: height/17}}
                 onChangeText={(text) => this.setState({text})}
                 value={this.state.row}
+                placeholder={this.props.placeInput}
               />
               <Image style={styles.image}  source={this.props.image}/>
           </View>

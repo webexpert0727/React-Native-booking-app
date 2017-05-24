@@ -15,12 +15,18 @@ module.exports = StyleSheet.create({
     },
     shadowRadius: 2,
     shadowOpacity: 1.0,
+    flexDirection:'row',
+    justifyContent:'center'
   },
   buttonText:{
    color:'#fff',
-   paddingLeft:60,
    paddingRight:60,
    padding:10,
    fontWeight:'bold'
+  },
+  image:{
+    marginLeft:60,
+    height:15,
+    width:22
   }
 });

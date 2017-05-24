@@ -9,11 +9,11 @@ export default class TabLogin extends Component {
 
     render(){
         return(
-    		  <TouchableOpacity>
-               <View style={[styles.tabView,{backgroundColor:this.props.color}]}>
+            <TouchableOpacity>
+                <View style={[styles.tabView,{backgroundColor:this.props.color}]}>
                     <Text style={[styles.textView,{color:this.props.textColor}]}>{this.props.text}</Text>
                 </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
         )
     }
 }

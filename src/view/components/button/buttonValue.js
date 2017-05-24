@@ -10,8 +10,9 @@ export default class ButtonValue extends Component {
   render(){
     return(
       <TouchableOpacity onPress={this.props.nextPage}>
-    		 	<View style={styles.buttonView}>
-            <Text style={styles.buttonText}>{this.props.value}</Text>
+          <View style={styles.buttonView}>
+            <Image style={styles.image}  source={this.props.image}/>
+            <Text style={[styles.buttonText,{paddingLeft:this.props.image?15:60}]}>{this.props.value}</Text>
           </View>
       </TouchableOpacity>
     )

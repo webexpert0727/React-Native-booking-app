@@ -18,6 +18,7 @@ let nameIcon = require('../assets/name.png');
 let emailIcon= require('../assets/email.png');
 let phoneIcon= require('../assets/phone.png');
 let passwordIcon= require('../assets/password.png');
+let backArrow= require('../assets/arrow.png');
 
 export default class signUp extends Component {
   static navigationOptions = {
@@ -35,7 +36,7 @@ export default class signUp extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-          <BackNavbar text="SIGN UP" backpage={()=>{this._navigateToBack(navigate)}}/>
+          <BackNavbar text="SIGN UP" backPage={()=>{this._navigateToBack(navigate)}} imageLeft={backArrow}/>
           <SignUpRow text="Invitation Code" width={width/1.8}/>
           <SignUpRow text="First Name" image={nameIcon} width={width/2}/>
           <SignUpRow text="Last Name" image={nameIcon} width={width/2}/>

@@ -25,7 +25,7 @@ export default class logIn extends Component {
     header: null,
   };
   _navigateToNext(navigate){
-        navigate('signUp');
+        navigate('signIn');
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -45,7 +45,7 @@ export default class logIn extends Component {
               <SignUpRow text="Password" image={passwordKey} width={width/2}/>
               <View style={styles.footer}>
                   <Text style={styles.textColor}>New User? </Text>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigate('signUp')}>
                     <Text style={[styles.textColor,{color:'#2ad5a3'}]}>Sign Up</Text>
                   </TouchableOpacity>
               </View>

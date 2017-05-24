@@ -9,17 +9,16 @@ export default class backNavbar extends Component {
 
   render(){
     return(
-		 	<View style={styles.titleHeader}>
+      <View style={styles.titleHeader}>
           <TouchableOpacity onPress={this.props.backPage}>
-              <Image
-                style={styles.image}
-                source={require('../../assets/arrow.png')}
-              />
+              <Image style={styles.imageLeft}  source={this.props.imageLeft}/>
           </TouchableOpacity>
-          <View >
+          <View style={{ alignSelf:'center'}} >
               <Text style={styles.title}>{this.props.text}</Text>
           </View>
-          <View></View>
+          <TouchableOpacity onPress={this.props.action}>
+              <Image style={styles.imageRight}  source={this.props.imageRight}/>
+          </TouchableOpacity>
       </View>
     )
   }

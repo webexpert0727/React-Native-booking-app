@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native';
+const {height, width} = Dimensions.get('window');
 
 module.exports = StyleSheet.create({
   buttonView:{
-   backgroundColor:'#000',
-   alignItems:'center',
-   alignSelf:'center',
-   shadowColor: '#323232',
-   shadowOffset: {
+    backgroundColor:'#000',
+    alignItems:'center',
+    alignSelf:'center',
+    shadowColor: '#323232',
+    shadowOffset: {
       width: 0,
       height: 1
     },
@@ -19,13 +21,11 @@ module.exports = StyleSheet.create({
     justifyContent:'center'
   },
   buttonText:{
-   color:'#fff',
-   paddingRight:60,
-   padding:10,
-   fontWeight:'bold'
+    color:'#fff',
+    padding:10,
+    fontWeight:'bold'
   },
   image:{
-    marginLeft:60,
     height:15,
     width:22
   }

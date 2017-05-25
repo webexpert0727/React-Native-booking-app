@@ -26,27 +26,30 @@ export default class signUp extends Component {
     headerMode: 'none',
     header: null,
   };
+  constructor(props){
+    super(props)
+  }
   _navigateToNext(navigate){
-        navigate('signIn');
+    navigate('signIn');
   }
   _navigateToBack(navigate){
-        navigate('login');
+    navigate('login');
   }
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-          <BackNavbar text="SIGN UP" backPage={()=>{this._navigateToBack(navigate)}} imageLeft={backArrow}/>
-          <SignUpRow text="Invitation Code" width={width/1.8}/>
-          <SignUpRow text="First Name" image={nameIcon} width={width/2}/>
-          <SignUpRow text="Last Name" image={nameIcon} width={width/2}/>
-          <SignUpRow text="Email" image={emailIcon} width={width/2}/>
-          <SignUpRow text="Phone Number" image={phoneIcon} width={width/2}/>
-          <SignUpRow text="Password" image={passwordIcon} width={width/2}/>
-          <SignUpRow text="Confirm Password" image={passwordIcon} width={width/2}/>
-          <View style={styles.hr}>
-          </View>
-          <ButtonValue value="SIGN UP" nextPage={()=>{this._navigateToNext(navigate)}}/>
+        <BackNavbar text="SIGN UP" backPage={()=>{this._navigateToBack(navigate)}} imageLeft={backArrow}/>
+        <SignUpRow text="Invitation Code" width={width/1.8}/>
+        <SignUpRow text="First Name" image={nameIcon} width={width/2}/>
+        <SignUpRow text="Last Name" image={nameIcon} width={width/2}/>
+        <SignUpRow text="Email" image={emailIcon} width={width/2}/>
+        <SignUpRow text="Phone Number" image={phoneIcon} width={width/2}/>
+        <SignUpRow text="Password" image={passwordIcon} width={width/2}/>
+        <SignUpRow text="Confirm Password" image={passwordIcon} width={width/2}/>
+        <View style={styles.hr}>
+        </View>
+        <ButtonValue value="SIGN UP" nextPage={()=>{this._navigateToNext(navigate)}}/>
       </View>
     );
   }

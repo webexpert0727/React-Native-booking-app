@@ -12,19 +12,21 @@ import MyBarbers from './view/myBarbers/myBarbers';
 import MyProfile from './view/customer/myProfile/myProfile';
 import EditProfile from './view/customer/editProfile/editProfile';
 import UploadPhoto from './view/customer/uploadPhoto/uploadPhoto';
+import BookAppointment from './view/customer/bookAppointment/bookAppointment';
 import Home from './view/customer/home/home';
 import { StackNavigator } from 'react-navigation';
 
 const App = StackNavigator({
 	login: {screen: Login},
+	myBarbers:{screen:MyBarbers},
+	bookAppointment: {screen: BookAppointment},
 	signUp: {screen: SignUp},
 	signIn: {screen: SignIn},
 	home: {screen: Home},
+	myProfile: {screen: MyProfile},
 	shopHours: {screen: ShopHours},
 	uploadPhoto: {screen: UploadPhoto},
-	myProfile: {screen: MyProfile},
 	editProfile: {screen: EditProfile},
-	myBarbers:{screen:MyBarbers},
 	resetPassword: {screen: ResetPassword}
 });
 

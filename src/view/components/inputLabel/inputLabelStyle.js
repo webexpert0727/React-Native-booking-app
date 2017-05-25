@@ -15,7 +15,6 @@ module.exports = StyleSheet.create({
     marginBottom:3,
   },
   rowColumnFirst:{
-    borderRightWidth:0.5,
     borderRightColor:'gray',
     paddingRight:21,
     paddingLeft:0,

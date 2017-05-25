@@ -24,23 +24,26 @@ export default class ShopHours extends Component {
     headerMode: 'none',
     header: null,
   };
+  constructor(props){
+    super(props)
+  }
   _navigateToNext(navigate){
-        navigate('signIn');
+    navigate('signIn');
   }
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={{flex:1,backgroundColor:'#efefef'}}>
-          <BackNavbar text="SHOP HOURS" imageLeft={menuImage} />
-          <ScrollView style={{marginTop: -5}}>
-		          <ShopSchedule title="SUNDAY" from="08:00 am" to="08:00 pm"/>
-		          <ShopSchedule title="MONDAY" from="08:00 am" to="09:30 pm"/>
-		          <ShopSchedule title="TUESDAY" from="07:00 am" to="06:00 pm"/>
-		          <ShopSchedule title="WEDNESDAY" from="08:00 am" to="08:00 pm"/>
-		          <ShopSchedule title="THURSDAY" from="08:00 am" to="08:00 pm"/>
-		          <ShopSchedule title="FRIDAY" from="08:00 am" to="08:00 pm"/>
-		          <ShopSchedule title="SATURDAY" from="08:00 am" to="08:00 pm"/>
-          </ScrollView>
+        <BackNavbar text="SHOP HOURS" imageLeft={menuImage} />
+        <ScrollView style={{marginTop: -5}}>
+          <ShopSchedule title="SUNDAY" from="08:00 am" to="08:00 pm"/>
+          <ShopSchedule title="MONDAY" from="08:00 am" to="09:30 pm"/>
+          <ShopSchedule title="TUESDAY" from="07:00 am" to="06:00 pm"/>
+          <ShopSchedule title="WEDNESDAY" from="08:00 am" to="08:00 pm"/>
+          <ShopSchedule title="THURSDAY" from="08:00 am" to="08:00 pm"/>
+          <ShopSchedule title="FRIDAY" from="08:00 am" to="08:00 pm"/>
+          <ShopSchedule title="SATURDAY" from="08:00 am" to="08:00 pm"/>
+        </ScrollView>
       </View>
     );
   }

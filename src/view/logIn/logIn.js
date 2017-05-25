@@ -24,6 +24,9 @@ export default class logIn extends Component {
     headerMode: 'none',
     header: null,
   };
+  constructor(props){
+    super(props)
+  }
   _navigateToNext(navigate){
         navigate('signIn');
   }
@@ -31,28 +34,28 @@ export default class logIn extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={{flex:1}}>
-          <View style={styles.container}>
-              <Image style={styles.imageView} source={require('../assets/logo.png')}/>
+        <View style={styles.container}>
+          <Image style={styles.imageView} source={require('../assets/logo.png')}/>
+        </View>
+        <ScrollView style={styles.midContainer}>
+          <View style={styles.tabBarStyle}>
+            <TabLogin text="Admin" color="#000" textColor="#fff"/>
+            <TabLogin text="Barber" textColor="#000"/>
+            <TabLogin text="Customer" textColor="#000"/>
+            <TabLogin text="Secretary" textColor="#000"/>
           </View>
-          <ScrollView style={styles.midContainer}>
-              <View style={styles.tabBarStyle}>
-                  <TabLogin text="Admin" color="#000" textColor="#fff"/>
-                  <TabLogin text="Barber" textColor="#000"/>
-                  <TabLogin text="Customer" textColor="#000"/>
-                  <TabLogin text="Secretary" textColor="#000"/>
-              </View>
-              <SignUpRow text="Email" image={mailBox} width={width/2}  />
-              <SignUpRow text="Password" image={passwordKey} width={width/2}/>
-              <View style={styles.footer}>
-                  <Text style={styles.textColor}>New User? </Text>
-                  <TouchableOpacity onPress={() => navigate('signUp')}>
-                    <Text style={[styles.textColor,{color:'#2ad5a3'}]}>Sign Up</Text>
-                  </TouchableOpacity>
-              </View>
-              <View style={{margin: 20}}>
-                <ButtonValue value="LOGIN" nextPage={()=>{this._navigateToNext(navigate)}}/>
-              </View>
-          </ScrollView>
+          <SignUpRow text="Email" image={mailBox} width={width/2}  />
+          <SignUpRow text="Password" image={passwordKey} width={width/2}/>
+          <View style={styles.footer}>
+            <Text style={styles.textColor}>New User? </Text>
+            <TouchableOpacity onPress={() => navigate('signUp')}>
+              <Text style={[styles.textColor,{color:'#2ad5a3'}]}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{margin: 20}}>
+            <ButtonValue value="LOGIN" nextPage={()=>{this._navigateToNext(navigate)}}/>
+          </View>
+        </ScrollView>
       </View>
     );
   }

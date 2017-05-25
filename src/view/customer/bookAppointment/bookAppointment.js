@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {
-	View
+	View,
+	Image,
+	Text
 } from 'react-native';
 
 import BackNavbar from '../../components/backNavbar/backNavbar';
+import TabView from '../../components/tabBarLink/tabBarLink';
+import Schedule from '../../components/appointmentSchedule/appointmentSchedule';
 import SideMenu from '../../components/sideMenu/sideMenu';
-import ButtonValue from '../../components/button/buttonValue';
 import Drawer from 'react-native-drawer';
-import styles from './uploadPhotoStyle';
+import styles from './bookAppointmentStyle';
 
 let menuIcon= require('../../assets/menu.png');
-let uploadIcon= require('../../assets/upload.png');
+let calendarIcon= require('../../assets/calendarBooking.png');
 let drawerStyles = {
   drawer: {
     shadowColor: "#00000000",
@@ -20,7 +23,7 @@ let drawerStyles = {
   main: {paddingLeft: 3},
 };
 
-export default class uploadPhoto extends Component {
+export default class bookAppointment extends Component {
   static navigationOptions = {
     // title: 'Welcome',
     headerMode: 'none',
@@ -30,6 +33,17 @@ export default class uploadPhoto extends Component {
     super(props);
     this.state = {
     };
+  }
+
+  _navigateToAction(navigate){
+    navigate('');
+  }
+
+  onBarber1Appointment(){
+   <TabView value="Barber1" time="09:00" timeAvailabilityOrName="Time is free"  openOrService="Booking appointment open"/>
+  }
+  onBarber2Appointment(navigate){
+    
   }
   
   openDrawer(){
@@ -44,7 +58,7 @@ export default class uploadPhoto extends Component {
     navigate('home');
   }
   goToBookAppointent(navigate){
-    navigate('bookAppointment');
+    navigate('myBarbers');
   }
   goToUploadPhoto(navigate){
     navigate('uploadPhoto');
@@ -79,10 +93,11 @@ export default class uploadPhoto extends Component {
         })}
       >
         <View style={styles.container}>
-          <BackNavbar text="UPLOAD PHOTO" backPage={()=>{this.openDrawer()}} imageLeft={menuIcon}/>
-          <View style={styles.hr}>
+          <BackNavbar backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={calendarIcon} action={()=>{this._navigateToAction(navigate)}}/>
+          <View style={styles.tabView}>
+          	<TabView value="Barber1" nextPage={()=>{this.onBarber1Appointment()}} />
+          	<TabView value="Barber2" nextPage={()=>{this.onBarber2Appointment()}}/>
           </View>
-        	<ButtonValue value="PICK PHOTO" image={uploadIcon} nextPage={()=>{this._navigateToNext(navigate)}}/>
         </View>
       </Drawer>
     );

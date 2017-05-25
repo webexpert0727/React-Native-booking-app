@@ -22,20 +22,20 @@ export default class inputLable extends Component {
     let row = this.props.text;
     return(
       <View style={styles.row}>
-          <View style={styles.rowColumnFirst}>
-              <Text style={styles.textStyle}>{this.props.text}</Text>
-          </View>
-          <View style={styles.row}>
-              <TextInput
-                underlineColorAndroid='rgba(0,0,0,0)'
-                underlineColorios= 'rgba(0,0,0,0)'
-                style={{width:this.props.width, height: height/17}}
-                onChangeText={(text) => this.setState({text})}
-                value={this.state.row}
-                placeholder={this.props.placeInput}
-              />
-              <Image style={styles.image}  source={this.props.image}/>
-          </View>
+        <View style={[styles.rowColumnFirst,{borderRightWidth:this.props.placeInput?0:0.5}]}>
+          <Text style={styles.textStyle}>{this.props.text}</Text>
+        </View>
+        <View style={styles.row}>
+          <TextInput
+            underlineColorAndroid='rgba(0,0,0,0)'
+            underlineColorios= 'rgba(0,0,0,0)'
+            style={{width:this.props.width, height: height/17}}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.row}
+            placeholder={this.props.placeInput}
+          />
+          <Image style={styles.image}  source={this.props.image}/>
+        </View>
       </View>
     )
   }

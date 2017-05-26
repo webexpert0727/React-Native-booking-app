@@ -7,27 +7,40 @@ const {height, width} = Dimensions.get('window');
 
 module.exports = StyleSheet.create({
   row:{
-    flexDirection:'row'
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    padding:13,
+    marginTop:1.5,
+    marginBottom:1.5,
+    backgroundColor:'white'
   },
-  column:{
+  timeColumn:{
     flexDirection:'column',
     borderRadius:25,
-    height:50,
-    width:50,
-    backgroundColor:'#7fffd4'
+    height:48,
+    width:48,
+    backgroundColor:'#3cb371',
+    padding:5,
+    alignItems:'center'
+  },
+  detailColumn:{
+    flexDirection:'column',
+    height:20
   },
   timeText:{
-	fontSize:15,
+	fontSize:13,
 	color:'white'
   },
   nameText:{
     color: 'black',
     fontSize:12,
-    fontWeight:'900',
-    padding:6
+    fontWeight:'900'
   },
   serviceText:{
     color: 'gray',
     fontSize:11
   },
+  column:{
+    width:width/6
+  }
 });

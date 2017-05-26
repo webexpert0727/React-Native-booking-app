@@ -10,7 +10,7 @@ export default class tabBarLink extends Component {
   render(){
     return(
       <TouchableOpacity onPress={this.props.nextPage}>
-        <Text style={styles.buttonText}>{this.props.value}</Text>
+        <Text style={[styles.buttonText,{borderBottomColor:this.props.active?'#7fffd4':'black'}]}>{this.props.value}</Text>
       </TouchableOpacity>
     )
   }

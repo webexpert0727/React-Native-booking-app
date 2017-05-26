@@ -6,7 +6,7 @@ import {
 
 import BackNavbar from '../components/backNavbar/backNavbar';
 import Barber from '../components/linkablePanel/linkablePanel';
-import SideMenu from '../components/sideMenu/sideMenu';
+import SideMenu from '../components/sideMenuAdmin/sideMenuAdmin';
 import AddBarber from './addBarbers';
 import Drawer from 'react-native-drawer';
 import styles from './myBarbersStyle';
@@ -47,14 +47,23 @@ export default class myBarbers extends Component {
     //this.refs.drawer.close();
     navigate('home');
   }
-  goToHome(navigate){
-    navigate('home');
+  goToCalender(navigate){
+    navigate('');
   }
-  goToBookAppointent(navigate){
+  goToBarbers(navigate){
     navigate('myBarbers');
   }
-  goToUploadPhoto(navigate){
-    navigate('uploadPhoto');
+  goToReseptionists(navigate){
+    navigate('');
+  }
+  goToCustomers(navigate){
+    navigate('');
+  }
+  goToShopHours(navigate){
+    navigate('shopHours');
+  }
+  goToInvitation(navigate){
+    navigate('');
   }
   goToSignOut(navigate){
     navigate('login');
@@ -68,11 +77,15 @@ export default class myBarbers extends Component {
         type="overlay"
         content={
           <SideMenu
-            goToHome={()=>{this.goToHome(navigate)}}
-            goToBookAppointent={()=>{this.goToBookAppointent(navigate)}}
-            goToUploadPhoto={()=>{this.goToUploadPhoto(navigate)}}
+            goToCalender={()=>{this.goToCalender(navigate)}}
+            goToBarbers={()=>{this.goToBarbers(navigate)}}
+            goToReseptionists={()=>{this.goToReseptionists(navigate)}}
+            goToShopHours={()=>{this.goToShopHours(navigate)}}
+            goToCustomers={()=>{this.goToCustomers(navigate)}}
+            goToInvitation={()=>{this.goToInvitation(navigate)}}
             goToSignOut ={()=>{this.goToSignOut(navigate)}}
             close={()=>{this.closeDrawer(navigate)}}
+            page="admin"
           />}
         tapToClose={false}
         openDrawerOffset={0.3}

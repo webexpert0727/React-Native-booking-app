@@ -19,7 +19,6 @@ import { StackNavigator } from 'react-navigation';
 const App = StackNavigator({
 	login: {screen: Login},
 	myBarbers:{screen:MyBarbers},
-	bookAppointment: {screen: BookAppointment},
 	signUp: {screen: SignUp},
 	signIn: {screen: SignIn},
 	home: {screen: Home},
@@ -27,7 +26,8 @@ const App = StackNavigator({
 	shopHours: {screen: ShopHours},
 	uploadPhoto: {screen: UploadPhoto},
 	editProfile: {screen: EditProfile},
-	resetPassword: {screen: ResetPassword}
+	resetPassword: {screen: ResetPassword},
+	bookAppointment: {screen: BookAppointment}
 });
 
 AppRegistry.registerComponent('Barber', () => App);

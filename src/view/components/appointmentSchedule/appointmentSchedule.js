@@ -11,11 +11,13 @@ export default class appointmentSchedule extends Component {
     return(
       <TouchableOpacity onPress={this.props.nextPage}>
 			  <View style={styles.row}>
-				  <View style={styles.column} >
-				    <Text style={styles.timeText}>{this.props.time}</Text>
-				    <Text style={styles.timeText}>am</Text>
+			  	<View style={ styles.column}>
+					  <View style={styles.timeColumn} >
+					    <Text style={styles.timeText}>{this.props.time}</Text>
+					    <Text style={styles.timeText}>am</Text>
+					  </View>
 				  </View>
-				  <View style={styles.column} >
+				  <View style={styles.detailColumn} >
 				    <Text style={styles.nameText}>{this.props.timeAvailabilityOrName}</Text>
 				    <Text style={styles.serviceText}>{this.props.openOrService}</Text>
 				  </View>

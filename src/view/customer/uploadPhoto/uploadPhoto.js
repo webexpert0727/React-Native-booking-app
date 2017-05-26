@@ -66,6 +66,7 @@ export default class uploadPhoto extends Component {
             goToUploadPhoto={()=>{this.goToUploadPhoto(navigate)}}
             goToSignOut ={()=>{this.goToSignOut(navigate)}}
             close={()=>{this.closeDrawer(navigate)}}
+            page="customer"
           />}
         tapToClose={false}
         openDrawerOffset={0.3}

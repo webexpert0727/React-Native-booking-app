@@ -8,9 +8,12 @@ const {height, width} = Dimensions.get('window');
 module.exports = StyleSheet.create({
   buttonText:{
     color:'#fff',
-    paddingRight:width/10,
-    padding:10,
+    marginRight:width/10,
+    marginLeft:14,
+    paddingTop:5,
+    paddingBottom:5,
     fontWeight:'bold',
-    fontSize:16
+    fontSize:16,
+    borderBottomWidth:3
   }
 });

@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import {
 	View,
 	Image,
-	Text
+	Text,
+  Modal
 } from 'react-native';
 
 import BackNavbar from '../../components/backNavbar/backNavbar';
 import TabView from '../../components/tabBarLink/tabBarLink';
-import Schedule from '../../components/appointmentSchedule/appointmentSchedule';
+import BarberScheduleDetails from '../../components/barbersSchedule/barbersSchedule';
 import SideMenu from '../../components/sideMenu/sideMenu';
 import Drawer from 'react-native-drawer';
 import styles from './bookAppointmentStyle';
+import AppointmentModal from './bookAppointmentModal';
 
 let menuIcon= require('../../assets/menu.png');
 let calendarIcon= require('../../assets/calendarBooking.png');
@@ -32,18 +34,27 @@ export default class bookAppointment extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      barber1Active:true,
+      barber2Active:false,
+      modalVisible: false
     };
   }
 
-  _navigateToAction(navigate){
-    navigate('');
+  _navigateToAction(){
+    
+  }
+  _navigateToModal(navigate){
+    this.setState({modalVisible:true})
   }
 
   onBarber1Appointment(){
-   <TabView value="Barber1" time="09:00" timeAvailabilityOrName="Time is free"  openOrService="Booking appointment open"/>
+    this.setState({barber2Active:false})
+    this.setState({barber1Active:true})
   }
-  onBarber2Appointment(navigate){
-    
+  
+  onBarber2Appointment(){
+    this.setState({barber1Active:false})
+    this.setState({barber2Active:true})
   }
   
   openDrawer(){
@@ -80,6 +91,7 @@ export default class bookAppointment extends Component {
             goToUploadPhoto={()=>{this.goToUploadPhoto(navigate)}}
             goToSignOut ={()=>{this.goToSignOut(navigate)}}
             close={()=>{this.closeDrawer(navigate)}}
+            page="customer"
           />}
         tapToClose={false}
         openDrawerOffset={0.3}
@@ -93,11 +105,20 @@ export default class bookAppointment extends Component {
         })}
       >
         <View style={styles.container}>
-          <BackNavbar backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={calendarIcon} action={()=>{this._navigateToAction(navigate)}}/>
+          <BackNavbar backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={calendarIcon} action={()=>{this._navigateToAction()}}/>
           <View style={styles.tabView}>
-          	<TabView value="Barber1" nextPage={()=>{this.onBarber1Appointment()}} />
-          	<TabView value="Barber2" nextPage={()=>{this.onBarber2Appointment()}}/>
+            <TabView value="Barber1" active={this.state.barber1Active} nextPage={()=>{this.onBarber1Appointment()}} />
+          	<TabView value="Barber2" active={this.state.barber2Active} nextPage={()=>{this.onBarber2Appointment()}}/>
           </View>
+          <BarberScheduleDetails value={this.state.barber1Active?'barber1':'barber2'} bookModal={()=>{this._navigateToModal(navigate)}}/>
+          <Modal 
+            animationType={"none"}
+            transparent={true}
+            visible={this.state.modalVisible}
+            onRequestClose={() => alert("modal is closed")}>
+              <AppointmentModal 
+                onClose={(val) => this.setState({modalVisible : val})} />
+          </Modal>
         </View>
       </Drawer>
     );

@@ -43,7 +43,7 @@ export default class signIn extends Component {
         <SignUpRow text="Email" image={mailBox} width={width/2}/>
         <SignUpRow text="Password" image={passwordKey} width={width/2}/>
         <View style={{marginTop:20}}>
-          <ButtonValue value="SIGN IN" nextPage={()=>{this._navigateToNext(navigate)}}/>
+          <ButtonValue value="SIGN IN" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/2}/>
       	</View>
       	<TouchableOpacity style={styles.forgotView} onPress={() => navigate('resetPassword')}>
     		  <Text style={styles.forgotPass}>Forgot your password?</Text>

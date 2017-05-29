@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-  TextInput,
-  Text,
-  View,
-  Image 
+	View,
+	Image,
+	Text,
+  Modal
 } from 'react-native';
-import TabLogin from '../components/tabLogin/tabLogin';
-import SignUpRow from '../components/inputLabel/inputLabel';
-import ButtonValue from '../components/button/buttonValue';
-import SideMenu from '../components/sideMenuAdmin/sideMenuAdmin';
-import styles from './shopHourStyle.js';
-import Drawer from 'react-native-drawer';
-import BackNavbar from '../components/backNavbar/backNavbar';
-import ShopSchedule from '../components/shopSchedule/shopSchedule';
 
-let menuImage = require('../assets/menu.png');
-const {height, width} = Dimensions.get('window');
+import SideMenu from '../../components/sideMenu/sideMenuAdmin';
+import Drawer from 'react-native-drawer';
+import Appointment from '../../components/appointment/appointmentCalender';
+
 let drawerStyles = {
   drawer: {
     shadowColor: "#00000000",
@@ -29,16 +19,16 @@ let drawerStyles = {
   main: {paddingLeft: 3},
 };
 
-export default class ShopHours extends Component {
+export default class bookAppointment extends Component {
   static navigationOptions = {
+    // title: 'Welcome',
     headerMode: 'none',
     header: null,
   };
-  constructor(props){
-    super(props)
-  }
-  _navigateToNext(navigate){
-    navigate('signIn');
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
   }
 
   openDrawer(){
@@ -50,16 +40,16 @@ export default class ShopHours extends Component {
     navigate('home');
   }
   goToCalender(navigate){
-    navigate('');
+    navigate('calender');
   }
   goToBarbers(navigate){
     navigate('myBarbers');
   }
   goToReseptionists(navigate){
-    navigate('');
+    navigate('profile');
   }
   goToCustomers(navigate){
-    navigate('');
+    navigate('myCustomers');
   }
   goToShopHours(navigate){
     navigate('shopHours');
@@ -71,9 +61,8 @@ export default class ShopHours extends Component {
     navigate('login');
   }
   
-
   render() {
-    const { navigate } = this.props.navigation;
+  	const { navigate } = this.props.navigation;
     return (
       <Drawer
         ref="drawer"
@@ -101,18 +90,7 @@ export default class ShopHours extends Component {
           main: { opacity:(2-ratio)/2 }
         })}
       >
-        <View style={{flex:1,backgroundColor:'#efefef'}}>
-          <BackNavbar text="SHOP HOURS" imageLeft={menuImage} backPage={()=>{this.openDrawer()}} />
-          <ScrollView style={{marginTop: -5}}>
-            <ShopSchedule title="SUNDAY" from="08:00 am" to="08:00 pm"/>
-            <ShopSchedule title="MONDAY" from="08:00 am" to="09:30 pm"/>
-            <ShopSchedule title="TUESDAY" from="07:00 am" to="06:00 pm"/>
-            <ShopSchedule title="WEDNESDAY" from="08:00 am" to="08:00 pm"/>
-            <ShopSchedule title="THURSDAY" from="08:00 am" to="08:00 pm"/>
-            <ShopSchedule title="FRIDAY" from="08:00 am" to="08:00 pm"/>
-            <ShopSchedule title="SATURDAY" from="08:00 am" to="08:00 pm"/>
-          </ScrollView>
-        </View>
+        <Appointment backPage={()=>{this.openDrawer()}} page="admin" />
       </Drawer>
     );
   }

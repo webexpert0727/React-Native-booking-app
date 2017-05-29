@@ -6,16 +6,10 @@ import {
   Modal
 } from 'react-native';
 
-import BackNavbar from '../../components/backNavbar/backNavbar';
-import TabView from '../../components/tabBarLink/tabBarLink';
-import BarberScheduleDetails from '../../components/barbersSchedule/barbersSchedule';
 import SideMenu from '../../components/sideMenu/sideMenu';
 import Drawer from 'react-native-drawer';
-import styles from './bookAppointmentStyle';
-import AppointmentModal from './bookAppointmentModal';
+import Appointment from '../../components/appointment/appointmentCalender';
 
-let menuIcon= require('../../assets/menu.png');
-let calendarIcon= require('../../assets/calendarBooking.png');
 let drawerStyles = {
   drawer: {
     shadowColor: "#00000000",
@@ -34,29 +28,9 @@ export default class bookAppointment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      barber1Active:true,
-      barber2Active:false,
-      modalVisible: false
     };
   }
 
-  _navigateToAction(){
-    
-  }
-  _navigateToModal(navigate){
-    this.setState({modalVisible:true})
-  }
-
-  onBarber1Appointment(){
-    this.setState({barber2Active:false})
-    this.setState({barber1Active:true})
-  }
-  
-  onBarber2Appointment(){
-    this.setState({barber1Active:false})
-    this.setState({barber2Active:true})
-  }
-  
   openDrawer(){
     this.refs.drawer.open();
   }
@@ -69,7 +43,7 @@ export default class bookAppointment extends Component {
     navigate('home');
   }
   goToBookAppointent(navigate){
-    navigate('myBarbers');
+    navigate('bookAppointment');
   }
   goToUploadPhoto(navigate){
     navigate('uploadPhoto');
@@ -104,22 +78,7 @@ export default class bookAppointment extends Component {
           main: { opacity:(2-ratio)/2 }
         })}
       >
-        <View style={styles.container}>
-          <BackNavbar backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={calendarIcon} action={()=>{this._navigateToAction()}}/>
-          <View style={styles.tabView}>
-            <TabView value="Barber1" active={this.state.barber1Active} nextPage={()=>{this.onBarber1Appointment()}} />
-          	<TabView value="Barber2" active={this.state.barber2Active} nextPage={()=>{this.onBarber2Appointment()}}/>
-          </View>
-          <BarberScheduleDetails value={this.state.barber1Active?'barber1':'barber2'} bookModal={()=>{this._navigateToModal(navigate)}}/>
-          <Modal 
-            animationType={"none"}
-            transparent={true}
-            visible={this.state.modalVisible}
-            onRequestClose={() => alert("modal is closed")}>
-              <AppointmentModal 
-                onClose={(val) => this.setState({modalVisible : val})} />
-          </Modal>
-        </View>
+        <Appointment backPage={()=>{this.openDrawer()}} page="customer" navigateLink={navigate}/>
       </Drawer>
     );
   }

@@ -13,6 +13,11 @@ module.exports = StyleSheet.create({
     fontWeight:'700',
     color: '#ffffff'
   },
+  subtitle:{
+    fontSize:12,
+    color: '#ffffff',
+    paddingLeft:3
+  },
   titleHeader:{
     flexDirection:'row',
     justifyContent: 'space-between', 

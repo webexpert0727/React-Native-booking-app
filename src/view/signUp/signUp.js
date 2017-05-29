@@ -49,7 +49,7 @@ export default class signUp extends Component {
         <SignUpRow text="Confirm Password" image={passwordIcon} width={width/2}/>
         <View style={styles.hr}>
         </View>
-        <ButtonValue value="SIGN UP" nextPage={()=>{this._navigateToNext(navigate)}}/>
+        <ButtonValue value="SIGN UP" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/1.8}/>
       </View>
     );
   }

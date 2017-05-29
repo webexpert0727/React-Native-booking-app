@@ -37,13 +37,13 @@ export default class resetPassword extends Component {
         <Text style={styles.textStyle}>Enter your email to receive verification token.</Text>
         <SignUpRow text="Email" image={emailIcon} width={width/2}/>
         <View style={{ padding:8}}></View>
-        <ButtonValue value="GET TOKEN"/>
+        <ButtonValue value="GET TOKEN"  width={width/1.8}/>
         <View style={{ padding:8}}></View>
         <Text style={styles.textStyle}>Check your email and enter received token together with your new password.</Text>
         <SignUpRow text="Token" image={passwordIcon} width={width/2}/>
         <SignUpRow text="New Password" image={passwordIcon} width={width/2}/>
         <View style={{ padding:8}}></View>
-        <ButtonValue value="RESET PASSWORD"/>
+        <ButtonValue value="RESET PASSWORD"  width={width/1.8}/>
         <View style={styles.hr}>
         </View>  
       </View>

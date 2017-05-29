@@ -39,7 +39,7 @@ export default class logIn extends Component {
         </View>
         <ScrollView style={styles.midContainer}>
           <View style={styles.tabBarStyle}>
-            <TabLogin text="Admin" color="#000" textColor="#fff"/>
+            <TabLogin text="Admin" color="#000" textColor="#fff" />
             <TabLogin text="Barber" textColor="#000"/>
             <TabLogin text="Customer" textColor="#000"/>
             <TabLogin text="Secretary" textColor="#000"/>
@@ -53,7 +53,7 @@ export default class logIn extends Component {
             </TouchableOpacity>
           </View>
           <View style={{margin: 20}}>
-            <ButtonValue value="LOGIN" nextPage={()=>{this._navigateToNext(navigate)}}/>
+            <ButtonValue value="LOGIN" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/2}/>
           </View>
         </ScrollView>
       </View>

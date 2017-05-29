@@ -7,16 +7,16 @@ import {
   TouchableOpacity
 } from 'react-native';
 const {height, width} = Dimensions.get('window');
-import SignUpRow from '../components/inputLabel/inputLabel';
-import ButtonValue from '../components/button/buttonValue';
+import SignUpRow from '../../components/inputLabel/inputLabel';
+import ButtonValue from '../../components/button/buttonValue';
 import styles from './addBarberStyle.js';
 
-let profile= require('../assets/profile.png');
-let background= require('../assets/background.png');
-let close= require('../assets/close.png');
-let nameIcon = require('../assets/name.png');
-let emailIcon= require('../assets/email.png');
-let passwordIcon= require('../assets/password.png');
+let profile= require('../../assets/profile.png');
+let background= require('../../assets/background.png');
+let close= require('../../assets/close.png');
+let nameIcon = require('../../assets/name.png');
+let emailIcon= require('../../assets/email.png');
+let passwordIcon= require('../../assets/password.png');
 
 export default class AddBarbers extends Component {
 
@@ -39,8 +39,8 @@ export default class AddBarbers extends Component {
                 <SignUpRow text="Password" image={passwordIcon} width={width/2.5}/>
             </View>
             <View style={styles.buttons}>
-              <ButtonValue value="CANCEL" nextPage={()=>{this._navigateToNext(navigate)}}/>
-              <ButtonValue value="CREATE" nextPage={()=>{this._navigateToNext(navigate)}}/>
+              <ButtonValue value="CANCEL" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/2.5}/>
+              <ButtonValue value="CREATE" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/2.5}/>
             </View>
           </Image>
         </View>

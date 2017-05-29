@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import styles from './sideMenuAdminStyle';
+import styles from './sideMenuStyle';
 
 let { width, height } = Dimensions.get('window');
 let closeMenuIcon= require('../../assets/close_menu.png');
@@ -30,12 +30,12 @@ export default class sideMenuAdmin extends Component {
             <Image style={styles.image}  source={closeMenuIcon}/>
           </TouchableOpacity>
         </View>
-        {this.goToMain('Calender',this.props.goToCalender)}
-        {this.goToMain('Barbers', this.props.goToBarbers)}
-        {this.goToMain('Reseptionists',this.props.goToReseptionists)}
-        {this.goToMain('Customers', this.props.goToCustomers)}
-        {this.goToMain('ShopHours',this.props.goToShopHours)}
-        {this.goToMain('Invitation',this.props.goToInvitation)}
+        {this.goToMain('CALENDER',this.props.goToCalender)}
+        {this.goToMain('BARBERS', this.props.goToBarbers)}
+        {this.goToMain('RESEPTIONISTS',this.props.goToReseptionists)}
+        {this.goToMain('CUSTOMERS', this.props.goToCustomers)}
+        {this.goToMain('SHOP HOURS',this.props.goToShopHours)}
+        {this.goToMain('INVITATION',this.props.goToInvitation)}
         {this.goToMain('SIGN OUT',this.props.goToSignOut)}
       </View>
     );

@@ -13,8 +13,9 @@ export default class backNavbar extends Component {
         <TouchableOpacity onPress={this.props.backPage}>
           <Image style={styles.imageLeft}  source={this.props.imageLeft}/>
         </TouchableOpacity>
-        <View style={{ alignSelf:'center'}} >
+        <View style={{flexDirection:'column', alignSelf:'center'}} >
           <Text style={styles.title}>{this.props.text}</Text>
+          <Text style={styles.subtitle}>{this.props.columnRow2Text}</Text>
         </View>
         <TouchableOpacity onPress={this.props.action}>
           <Image style={styles.imageRight}  source={this.props.imageRight}/>

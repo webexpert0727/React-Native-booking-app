@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
+  TouchableOpacity,
+  ScrollView,
+  Dimensions,
+  TextInput,
+  Text,
   View,
-  Modal
+  Image 
 } from 'react-native';
-
-import BackNavbar from '../components/backNavbar/backNavbar';
-import Barber from '../components/linkablePanel/linkablePanel';
-import SideMenu from '../components/sideMenuAdmin/sideMenuAdmin';
-import AddBarber from './addBarbers';
+import TabLogin from '../../components/tabLogin/tabLogin';
+import SignUpRow from '../../components/inputLabel/inputLabel';
+import ButtonValue from '../../components/button/buttonValue';
+import SideMenu from '../../components/sideMenu/sideMenuAdmin';
+import styles from './shopHourStyle.js';
 import Drawer from 'react-native-drawer';
-import styles from './myBarbersStyle';
+import BackNavbar from '../../components/backNavbar/backNavbar';
+import ShopSchedule from '../../components/shopSchedule/shopSchedule';
 
-let plusIcon= require('../assets/plus.png');
-let menuIcon= require('../assets/menu.png');
+let menuImage = require('../../assets/menu.png');
+const {height, width} = Dimensions.get('window');
 let drawerStyles = {
   drawer: {
     shadowColor: "#00000000",
@@ -22,21 +29,16 @@ let drawerStyles = {
   main: {paddingLeft: 3},
 };
 
-export default class myBarbers extends Component {
+export default class ShopHours extends Component {
   static navigationOptions = {
-    // title: 'Welcome',
     headerMode: 'none',
     header: null,
   };
   constructor(props){
-    super(props);
-    this.state={
-      modalVisible: false,
-    }
+    super(props)
   }
-  
-  _navigateToAction(navigate){
-    this.setState({modalVisible:true})
+  _navigateToNext(navigate){
+    navigate('signIn');
   }
 
   openDrawer(){
@@ -48,16 +50,16 @@ export default class myBarbers extends Component {
     navigate('home');
   }
   goToCalender(navigate){
-    navigate('');
+    navigate('calender');
   }
   goToBarbers(navigate){
     navigate('myBarbers');
   }
   goToReseptionists(navigate){
-    navigate('');
+    navigate('profile');
   }
   goToCustomers(navigate){
-    navigate('');
+    navigate('myCustomers');
   }
   goToShopHours(navigate){
     navigate('shopHours');
@@ -68,6 +70,7 @@ export default class myBarbers extends Component {
   goToSignOut(navigate){
     navigate('login');
   }
+  
 
   render() {
     const { navigate } = this.props.navigation;
@@ -98,20 +101,17 @@ export default class myBarbers extends Component {
           main: { opacity:(2-ratio)/2 }
         })}
       >
-        <View style={styles.container}>
-          <BackNavbar text="MY BARBERS" backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={plusIcon} action={()=>{this._navigateToAction(navigate)}}/>
-          <View style={styles.barbers}>
-            <Barber text="Barber1"/>
-            <Barber text="Barber2"/>
-          </View>
-          <Modal 
-            animationType={"none"}
-            transparent={true}
-            visible={this.state.modalVisible}
-            onRequestClose={() => alert("modal is closed")}>
-              <AddBarber 
-                onClose={(val) => this.setState({modalVisible : val})} />
-          </Modal>
+        <View style={{flex:1,backgroundColor:'#efefef'}}>
+          <BackNavbar text="SHOP HOURS" imageLeft={menuImage} backPage={()=>{this.openDrawer()}} />
+          <ScrollView style={{marginTop: -5}}>
+            <ShopSchedule title="SUNDAY" from="08:00 am" to="08:00 pm"/>
+            <ShopSchedule title="MONDAY" from="08:00 am" to="09:30 pm"/>
+            <ShopSchedule title="TUESDAY" from="07:00 am" to="06:00 pm"/>
+            <ShopSchedule title="WEDNESDAY" from="08:00 am" to="08:00 pm"/>
+            <ShopSchedule title="THURSDAY" from="08:00 am" to="08:00 pm"/>
+            <ShopSchedule title="FRIDAY" from="08:00 am" to="08:00 pm"/>
+            <ShopSchedule title="SATURDAY" from="08:00 am" to="08:00 pm"/>
+          </ScrollView>
         </View>
       </Drawer>
     );

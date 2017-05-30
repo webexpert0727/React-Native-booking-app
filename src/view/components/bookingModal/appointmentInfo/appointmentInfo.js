@@ -10,7 +10,7 @@ const {height, width} = Dimensions.get('window');
 import ButtonValue from '../../button/buttonValue';
 import styles from './appointmentInfoStyle.js';
 
-let infoIcon= require('../../../assets/info.png');
+let infoIcon= require('../../../assets/info.jpg');
 let background= require('../../../assets/background.png');
 let profileIcon= require('../../../assets/profile.png');
 let notesIcon= require('../../../assets/profile_date.png');

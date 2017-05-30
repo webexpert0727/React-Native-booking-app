@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  Modal
+  Modal,
+  ScrollView
 } from 'react-native';
 
 import BackNavbar from '../../components/backNavbar/backNavbar';
@@ -87,7 +88,7 @@ export default class myBarbers extends Component {
           />}
         tapToClose={false}
         openDrawerOffset={0.3}
-        panCloseMask={0.5}
+        panCloseMask={0.2}
         closedDrawerOffset={-3}
         captureGestures={true}
         negotiatePan={true}
@@ -98,10 +99,12 @@ export default class myBarbers extends Component {
       >
         <View style={styles.container}>
           <BackNavbar text="MY BARBERS" backPage={()=>{this.openDrawer()}} imageLeft={menuIcon} imageRight={plusIcon} action={()=>{this._navigateToAction(navigate)}}/>
-          <View style={styles.barbers}>
-            <Barber text="Barber1"/>
-            <Barber text="Barber2"/>
-          </View>
+          <ScrollView>
+            <View style={styles.barbers}>
+              <Barber text="Barber1"/>
+              <Barber text="Barber2"/>
+            </View>
+          </ScrollView>
           <Modal 
             animationType={"none"}
             transparent={true}

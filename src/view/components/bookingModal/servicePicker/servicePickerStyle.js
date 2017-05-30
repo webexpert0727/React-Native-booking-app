@@ -27,7 +27,7 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: -20,
+		top: -height/20,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
@@ -35,7 +35,7 @@ module.exports = StyleSheet.create({
 	imageClose: {
 		position: 'absolute',
 		right: 10,
-		top: 20
+		top: height/35
 	},
 	image:{
 		height: 18,
@@ -43,9 +43,10 @@ module.exports = StyleSheet.create({
 	},
 	textView: {
 		textAlign: 'center',
-		top: 50,
+		top: height/15,
 		color: '#000',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		fontSize:17
 	},
   container: {
     flex:1,
@@ -54,11 +55,11 @@ module.exports = StyleSheet.create({
   services:{
   	flexDirection:'row',
   	justifyContent:'center',
-  	top:30,
+  	top:height/27,
   	padding:10
   },
   button:{
-  	top:65
+  	top:height/10
   },
   checkbox:{
   	width:20,

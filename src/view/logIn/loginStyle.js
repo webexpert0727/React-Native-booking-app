@@ -26,11 +26,10 @@ const styles = StyleSheet.create({
   	flexDirection:'row',
   	flexWrap:'wrap',
   	margin:10,
-  	justifyContent:'space-between'
   },
   imageView: {
-  	width:width/2.4,
-  	height:height/6
+  	width:width/2.3,
+  	height:height/5.8
   },
   textColor: {
   	color:'#000',

@@ -27,7 +27,7 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: 15,
+		top: height/50,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
@@ -35,7 +35,7 @@ module.exports = StyleSheet.create({
 	imageClose: {
 		position: 'absolute',
 		right: 10,
-		top: 50
+		top: height/10
 	},
 	image:{
 		height: 18,
@@ -48,7 +48,7 @@ module.exports = StyleSheet.create({
   images:{
 		flexDirection:'row',
 		flexWrap: 'wrap',
-		top:90
+		top:height/6
   },
   customerImages:{
 		width:width/3.9,

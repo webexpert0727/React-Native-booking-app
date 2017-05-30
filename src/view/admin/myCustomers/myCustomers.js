@@ -5,7 +5,8 @@ import {
 	Text,
   TouchableOpacity,
   Dimensions,
-  TextInput
+  TextInput,
+  ScrollView
 } from 'react-native';
 
 import BackNavbar from '../../components/backNavbar/backNavbar';
@@ -100,7 +101,7 @@ export default class myCustomers extends Component {
           />}
         tapToClose={false}
         openDrawerOffset={0.3}
-        panCloseMask={0.5}
+        panCloseMask={0.2}
         closedDrawerOffset={-3}
         captureGestures={true}
         negotiatePan={true}
@@ -120,8 +121,10 @@ export default class myCustomers extends Component {
             </TouchableOpacity>
           </View>
           <Row text="Search" placeInput=" " image={searchIcon} width={width/2}/>
-          <Customer name="Name1 LastName1" email="Email:user1@test.com" image={profile_dateIcon} width={width/2.4}/>
-          <Customer name="Name1 LastName1" email="Email:user1@test.com" image={profile_dateIcon} width={width/2.4}/>
+          <ScrollView>
+            <Customer name="Name1 LastName1" email="Email:user1@test.com" image={profile_dateIcon} width={width/2.4}/>
+            <Customer name="Name1 LastName1" email="Email:user1@test.com" image={profile_dateIcon} width={width/2.4}/>
+          </ScrollView>
         </View>
       </Drawer>
     );

@@ -3,7 +3,8 @@ import {
 	View,
 	Image,
 	Text,
-  Modal
+  Modal,
+  ScrollView
 } from 'react-native';
 
 import BackNavbar from '../backNavbar/backNavbar';
@@ -86,7 +87,9 @@ export default class appointmentCalender extends Component {
             onSwipeNext={(e) => console.log('onSwipeNext', e)}
           />
         </View>:null}
-        <BarberScheduleDetails value={this.state.barber1Active?'barber1':'barber2'} bookModal={()=>{this._navigateToModal()}}/>
+        <ScrollView>
+          <BarberScheduleDetails value={this.state.barber1Active?'barber1':'barber2'} bookModal={()=>{this._navigateToModal()}}/>
+        </ScrollView>
         <Modal 
           animationType={"none"}
           transparent={true}

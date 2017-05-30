@@ -41,8 +41,11 @@ export default class AddBarbers extends Component {
             <Text style={styles.textView}>ADD NEW</Text>
             <View style={ styles.barberDetail}> 
                 <SignUpRow text="Last Name" image={nameIcon} width={width/2.5}/>
+                <View style={styles.hr}></View>
                 <SignUpRow text="Email" image={emailIcon} width={width/2.5}/>
+                <View style={styles.hr}></View>
                 <SignUpRow text="Password" image={passwordIcon} width={width/2.5}/>
+                <View style={styles.hr}></View>
             </View>
             <View style={styles.buttons}>
               <ButtonValue value="CANCEL" nextPage={()=>{this._navigateToNext(navigate)}}  width={width/2.5}/>

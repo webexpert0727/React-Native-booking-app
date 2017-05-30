@@ -27,7 +27,7 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: -5,
+		top: -height/78,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
@@ -35,7 +35,7 @@ module.exports = StyleSheet.create({
 	imageClose: {
 		position: 'absolute',
 		right: 15,
-		top: 35
+		top: height/20
 	},
 	image:{
 		height: 18,
@@ -43,7 +43,7 @@ module.exports = StyleSheet.create({
 	},
 	textView: {
 		textAlign: 'center',
-		top: 65,
+		top: height/9,
 		color: '#000',
 		fontWeight: 'bold',
 		fontSize:16
@@ -55,7 +55,7 @@ module.exports = StyleSheet.create({
   appointments:{
   	flexDirection:'row',
   	justifyContent:'center',
-  	top:50,
+  	top:height/10,
   	padding:10,
   },
   appointmentRow: {
@@ -67,12 +67,12 @@ module.exports = StyleSheet.create({
   button:{
   	flexDirection:'row',
   	justifyContent:'space-around',
-  	top:65
+  	top:height/9
   },
   column:{
   	flexDirection:'column',
   	justifyContent:'space-around',
-  	top:13,
+  	top:height/60,
   	width:width/3.0,
   	borderRightWidth:0.5,
   	borderRightColor:'black',

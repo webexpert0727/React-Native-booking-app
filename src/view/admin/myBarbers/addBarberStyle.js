@@ -19,7 +19,7 @@ module.exports = StyleSheet.create({
 	modalContainer: {
 		position:'absolute',
 		width:width/1.1,
-		height: height/2,
+		height: height/1.9,
 	},
 	imageProfile: {
 		borderColor: '#ffffff',
@@ -27,7 +27,7 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: -20,
+		top: -height/33,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
@@ -39,13 +39,14 @@ module.exports = StyleSheet.create({
 	closeImage: {
 		position: 'absolute',
 		right: 10,
-		top: 20,
+		top: height/20,
 	},
 	textView: {
 		textAlign: 'center',
 		top: 50,
 		color: '#000',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		fontSize:18
 	},
   container: {
     flex:1,
@@ -61,7 +62,14 @@ module.exports = StyleSheet.create({
   buttons:{
   	flexDirection:'row',
   	justifyContent:'space-around',
-  	top:210,
+  	top:height/2.8,
   	padding:14
+  },
+  hr:{
+  	padding:2,
+  	borderTopWidth:0.5,
+  	borderTopColor:'black',
+  	borderStyle:'dotted',
+  	marginLeft:15
   }
 });

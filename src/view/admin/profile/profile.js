@@ -6,7 +6,8 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
 import BackNavbar from '../../components/backNavbar/backNavbar';
 import Detail from '../../components/linkablePanel/linkablePanel';
@@ -42,13 +43,15 @@ export default class profile extends Component {
             <Text style={styles.title}>Photos</Text>
           </View>
         </View>
-        <View style={styles.images}>
-          <Image style={styles.customerImages} source={customer}/>
-          <Image style={styles.customerImages} source={customer}/>
-          <Image style={styles.customerImages} source={customer}/>
-          <Image style={styles.customerImages} source={customer}/>
-          <Image style={styles.customerImages} source={customer}/>
-        </View>
+        <ScrollView>
+          <View style={styles.images}>
+            <Image style={styles.customerImages} source={customer}/>
+            <Image style={styles.customerImages} source={customer}/>
+            <Image style={styles.customerImages} source={customer}/>
+            <Image style={styles.customerImages} source={customer}/>
+            <Image style={styles.customerImages} source={customer}/>
+          </View>
+        </ScrollView>
       </View>
     );
   }

@@ -9,13 +9,14 @@ const styles = StyleSheet.create({
 	tabView: {
 		borderRadius:15,
 		borderWidth:1,
-		marginTop:10
+		marginTop:10,
+		marginLeft:5,
+		width:width/3.4
 	},
 	textView: {
 		color:'#000',
-		paddingLeft:30,
-		paddingRight:30,
-		padding:5
+		padding:5,
+		alignSelf:'center'
 	}
 });
 

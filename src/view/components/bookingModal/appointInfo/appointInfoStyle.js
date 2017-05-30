@@ -19,7 +19,7 @@ module.exports = StyleSheet.create({
 	modalContainer: {
 		position:'absolute',
 		width:width/1.09,
-		height: height/3.5,
+		height: height/3.8,
 	},
 	imageProfile: {
 		borderColor: '#ffffff',
@@ -27,7 +27,7 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: -5,
+		top: -height/20,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
@@ -35,7 +35,7 @@ module.exports = StyleSheet.create({
 	imageClose: {
 		position: 'absolute',
 		right: 15,
-		top: 35
+		top: height/69
 	},
 	image:{
 		height: 18,
@@ -43,7 +43,7 @@ module.exports = StyleSheet.create({
 	},
 	textView: {
 		textAlign: 'center',
-		top: 65,
+		top: height/15,
 		color: '#000',
 		fontWeight: 'bold',
 		fontSize:16
@@ -55,13 +55,8 @@ module.exports = StyleSheet.create({
   appointments:{
   	flexDirection:'row',
   	justifyContent:'center',
-  	top:50,
+  	top:height/15,
   	padding:10,
-  },
-  button:{
-  	flexDirection:'row',
-  	justifyContent:'space-around',
-  	top:65
   },
   column:{
   	flexDirection:'column',

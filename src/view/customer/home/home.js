@@ -73,7 +73,7 @@ export default class home extends Component {
           />}
         tapToClose={false}
         openDrawerOffset={0.3}
-        panCloseMask={0.5}
+        panCloseMask={0.2}
         closedDrawerOffset={-3}
         captureGestures={true}
         negotiatePan={true}

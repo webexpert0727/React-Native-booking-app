@@ -12,6 +12,7 @@ import {
 import TabLogin from '../components/tabLogin/tabLogin';
 import SignUpRow from '../components/inputLabel/inputLabel';
 import ButtonValue from '../components/button/buttonValue';
+import SplashScreen from 'react-native-splash-screen';
 import styles from './loginStyle.js';
 
 let mailBox = require('../assets/email.png');
@@ -29,6 +30,9 @@ export default class logIn extends Component {
   }
   _navigateToNext(navigate){
         navigate('signIn');
+  }
+  componentDidMount() {
+      SplashScreen.hide();
   }
   render() {
     const { navigate } = this.props.navigation;

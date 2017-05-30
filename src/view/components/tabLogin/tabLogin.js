@@ -9,7 +9,7 @@ export default class TabLogin extends Component {
 
   render(){
     return(
-      <TouchableOpacity onPress={this.props.nextPage}>
+      <TouchableOpacity onPress={this.props.tabPage}>
         <View style={[styles.tabView,{backgroundColor:this.props.color}]}>
           <Text style={[styles.textView,{color:this.props.textColor}]}>{this.props.text}</Text>
         </View>

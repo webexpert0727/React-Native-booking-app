@@ -30,7 +30,7 @@ export default class signUp extends Component {
     super(props)
   }
   _navigateToNext(navigate){
-    navigate('signIn');
+    navigate('login');
   }
   _navigateToBack(navigate){
     navigate('login');

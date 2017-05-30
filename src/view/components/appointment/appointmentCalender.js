@@ -13,6 +13,7 @@ import styles from './appointmentCalenderStyle';
 import CustomerpopUp from '../bookingModal/servicePicker/servicePicker';
 import BarberpopUp from '../bookingModal/photos/photos';
 import PopUp from '../bookingModal/appointmentInfo/appointmentInfo';
+import SecretaryPopUp from '../bookingModal/appointInfo/appointInfo';
 import Calendar from 'react-native-calendar';
 
 const customDayHeadings = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -94,7 +95,7 @@ export default class appointmentCalender extends Component {
           {this.props.page=='customer'?
           	<CustomerpopUp onClose={(val) => this.setState({modalVisible : val})} />:this.props.page=='admin'?
           		<PopUp onClose={(val) => this.setState({modalVisible : val})} />:this.props.page=='secretary'?
-          			<PopUp onClose={(val) => this.setState({modalVisible : val})} />:
+                  <SecretaryPopUp onClose={(val) => this.setState({modalVisible : val})} />:
           				<BarberpopUp onClose={(val) => this.setState({modalVisible : val})} />
         	}
         </Modal>

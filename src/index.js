@@ -23,21 +23,21 @@ import SecretaryCalender from './view/secretary/calender/calender';
 
 const App = StackNavigator({
 	login: {screen: Login},
-	calender: {screen: Calender},
-	secretaryCalender: {screen: SecretaryCalender},
-	appointments: {screen: Appointments},
+	signIn: {screen: SignIn},
+	resetPassword: {screen: ResetPassword},
+	signUp: {screen: SignUp},
 	myCustomers: {screen: MyCustomers},
+	calender: {screen: Calender},
+	shopHours: {screen: ShopHours},
 	profile: {screen: Profile},
 	myBarbers:{screen:MyBarbers},
-	signUp: {screen: SignUp},
-	signIn: {screen: SignIn},
 	home: {screen: Home},
 	myProfile: {screen: MyProfile},
-	shopHours: {screen: ShopHours},
 	uploadPhoto: {screen: UploadPhoto},
+	bookAppointment: {screen: BookAppointment},
 	editProfile: {screen: EditProfile},
-	resetPassword: {screen: ResetPassword},
-	bookAppointment: {screen: BookAppointment}
+	secretaryCalender: {screen: SecretaryCalender},
+	appointments: {screen: Appointments}
 });
 
 AppRegistry.registerComponent('Barber', () => App);

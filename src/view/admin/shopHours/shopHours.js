@@ -45,9 +45,7 @@ export default class ShopHours extends Component {
     this.refs.drawer.open();
   }
   closeDrawer(navigate){
-    //this._drawer.close();
-    //this.refs.drawer.close();
-    navigate('home');
+    this.refs.drawer.close();
   }
   goToCalender(navigate){
     navigate('calender');

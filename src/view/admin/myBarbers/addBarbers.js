@@ -26,12 +26,18 @@ export default class AddBarbers extends Component {
     }
   }
 
+  closeModal(){
+    this.props.onClose(false)
+  }
+
   render() {
     return (
         <View style={styles.position}>
           <Image style={styles.modalContainer} source={background}>
             <Image source={profile} style={styles.imageProfile}/>
-            <Image source={close} style={styles.imageClose}/>
+            <TouchableOpacity style={styles.closeImage} onPress={()=>{this.closeModal()}}>
+                <Image source={close} style={styles.imageClose}/>
+            </TouchableOpacity>
             <Text style={styles.textView}>ADD NEW</Text>
             <View style={ styles.barberDetail}> 
                 <SignUpRow text="Last Name" image={nameIcon} width={width/2.5}/>

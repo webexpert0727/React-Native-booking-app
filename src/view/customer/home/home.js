@@ -41,9 +41,7 @@ export default class home extends Component {
     this.refs.drawer.open();
   }
   closeDrawer(navigate){
-    //this._drawer.close();
-    //this.refs.drawer.close();
-    navigate('home');
+    this.refs.drawer.close();
   }
   goToHome(navigate){
     navigate('home');

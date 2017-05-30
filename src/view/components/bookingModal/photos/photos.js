@@ -11,7 +11,7 @@ import styles from './photosStyle.js';
 
 let photoIcon= require('../../../assets/photo.png');
 let background= require('../../../assets/background.png');
-let userIcon= require('../../../assets/user.jpg');
+let user= require('../../../assets/user.jpg');
 let close= require('../../../assets/close.png');
 
 export default class photo extends Component {

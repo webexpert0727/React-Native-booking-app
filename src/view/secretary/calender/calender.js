@@ -6,7 +6,7 @@ import {
   Modal
 } from 'react-native';
 
-import SideMenu from '../../components/sideMenu/sideMenuBarber';
+import SideMenu from '../../components/sideMenu/sideMenuSecretary';
 import Drawer from 'react-native-drawer';
 import Appointment from '../../components/appointment/appointmentCalender';
 
@@ -35,9 +35,7 @@ export default class calender extends Component {
     this.refs.drawer.open();
   }
   closeDrawer(navigate){
-    //this._drawer.close();
-    //this.refs.drawer.close();
-    navigate('home');
+    this.refs.drawer.close();
   }
   goToCalender(navigate){
     navigate('secretaryCalender');
@@ -57,7 +55,7 @@ export default class calender extends Component {
             goToCalender={()=>{this.goToCalender(navigate)}}
             goToSignOut ={()=>{this.goToSignOut(navigate)}}
             close={()=>{this.closeDrawer(navigate)}}
-            page="admin"
+            page="secretary"
           />}
         tapToClose={false}
         openDrawerOffset={0.3}
@@ -70,7 +68,7 @@ export default class calender extends Component {
           main: { opacity:(2-ratio)/2 }
         })}
       >
-        <Appointment backPage={()=>{this.openDrawer()}} page="barber" />
+        <Appointment backPage={()=>{this.openDrawer()}} page="secretary" />
       </Drawer>
     );
   }

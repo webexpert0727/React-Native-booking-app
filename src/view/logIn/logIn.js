@@ -25,11 +25,20 @@ export default class logIn extends Component {
     header: null,
   };
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+    };
   }
   _navigateToNext(navigate){
-        navigate('signIn');
+    navigate('shopHours');
   }
+  navigateToAdmin(navigate){
+    navigate('login');
+  }
+  navigateToTab(navigate,user){
+    navigate('signIn',{ page: user });
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -39,10 +48,10 @@ export default class logIn extends Component {
         </View>
         <ScrollView style={styles.midContainer}>
           <View style={styles.tabBarStyle}>
-            <TabLogin text="Admin" color="#000" textColor="#fff" />
-            <TabLogin text="Barber" textColor="#000"/>
-            <TabLogin text="Customer" textColor="#000"/>
-            <TabLogin text="Secretary" textColor="#000"/>
+            <TabLogin text="Admin" color="#000" textColor="#fff" tabPage={()=>{this.navigateToAdmin(navigate)}}  />
+            <TabLogin text="Barber" textColor="#000" tabPage={()=>{this.navigateToTab(navigate,'barber')}}/>
+            <TabLogin text="Customer" textColor="#000" tabPage={()=>{this.navigateToTab(navigate,'customer')}}/>
+            <TabLogin text="Secretary" textColor="#000" tabPage={()=>{this.navigateToTab(navigate,'secretary')}}/>
           </View>
           <SignUpRow text="Email" image={mailBox} width={width/2}  />
           <SignUpRow text="Password" image={passwordKey} width={width/2}/>

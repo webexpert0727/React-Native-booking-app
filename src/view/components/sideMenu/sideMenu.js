@@ -22,18 +22,18 @@ export default class sideMenu extends Component {
     return (
       <View style={styles.menu}>          
         <View style={styles.menuHeader}>
-          <View style={styles.memberDetail}>
-            <Text style={styles.memberTextStyle}>NAME1 LASTNAME1</Text>
-            <Text style={styles.title}>View Profile</Text>
-          </View>
-          <TouchableOpacity onPress={this.props.close}>
-            <Image style={styles.image}  source={closeMenuIcon}/>
-          </TouchableOpacity>
+            <View style={styles.memberDetail}>
+              <Text style={styles.memberTextStyle}>NAME1 LASTNAME1</Text>
+              <Text style={styles.title}>View Profile</Text>
+            </View>
+            <TouchableOpacity onPress={this.props.close}>
+              <Image style={styles.image}  source={closeMenuIcon}/>
+            </TouchableOpacity>
         </View>
-        {this.goToMain('Home',this.props.goToHome)}
-        {this.goToMain('BOOK APPOINTMENT', this.props.goToBookAppointent)}
-        {this.goToMain('UPLOAD PHOTO',this.props.goToUploadPhoto)}
-        {this.goToMain('SIGN OUT',this.props.goToSignOut)}
+            {this.goToMain('Home',this.props.goToHome)}
+            {this.goToMain('BOOK APPOINTMENT', this.props.goToBookAppointent)}
+            {this.goToMain('UPLOAD PHOTO',this.props.goToUploadPhoto)}
+            {this.goToMain('SIGN OUT',this.props.goToSignOut)}
       </View>
     );
   }

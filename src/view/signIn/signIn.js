@@ -30,7 +30,17 @@ export default class signIn extends Component {
     super(props)
   }
   _navigateToNext(navigate){
-    navigate('myProfile');
+    user = this.props.navigation.state.params.page
+    console.log(user);
+    if(user == 'customer'){
+      navigate('home');
+    }
+    else if(user=='secretary'){
+      navigate('secretaryCalender');
+    }
+    else{
+      navigate('appointments');
+    }
   }
   _navigateToBack(navigate){
     navigate('login');
@@ -49,7 +59,9 @@ export default class signIn extends Component {
     		  <Text style={styles.forgotPass}>Forgot your password?</Text>
     		</TouchableOpacity>
     		<View style={styles.footer}>
-			    <Text style={styles.footerText}>CREATE ACCOUNTS</Text>
+          <TouchableOpacity  onPress={() => navigate('signUp')}>
+            <Text style={styles.footerText}>CREATE ACCOUNTS</Text>
+          </TouchableOpacity>
     		</View>
       </View>
     );

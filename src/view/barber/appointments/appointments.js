@@ -35,12 +35,10 @@ export default class bookAppointment extends Component {
     this.refs.drawer.open();
   }
   closeDrawer(navigate){
-    //this._drawer.close();
-    //this.refs.drawer.close();
-    navigate('home');
+    this.refs.drawer.close();
   }
   goToAppointments(navigate){
-    navigate('appointmets');
+    navigate('appointments');
   }
   goToSignOut(navigate){
     navigate('login');
@@ -57,7 +55,7 @@ export default class bookAppointment extends Component {
             goToAppointments={()=>{this.goToAppointments(navigate)}}
             goToSignOut ={()=>{this.goToSignOut(navigate)}}
             close={()=>{this.closeDrawer(navigate)}}
-            page="admin"
+            page="barber"
           />}
         tapToClose={false}
         openDrawerOffset={0.3}

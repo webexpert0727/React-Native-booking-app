@@ -18,8 +18,8 @@ module.exports = StyleSheet.create({
 	},
 	modalContainer: {
 		position:'absolute',
-		width:width/1.2,
-		height: height/1.1,
+		width:width/1.09,
+		height: height/3.5,
 	},
 	imageProfile: {
 		borderColor: '#ffffff',
@@ -27,38 +27,60 @@ module.exports = StyleSheet.create({
 		borderWidth: 4,
 		width: 60,
 		height: 60,
-		top: 15,
+		top: -5,
 		alignSelf: 'center',
 		position: 'absolute',
 		zIndex:100
 	},
 	imageClose: {
 		position: 'absolute',
-		right: 10,
-		top: 50
+		right: 15,
+		top: 35
 	},
 	image:{
 		height: 18,
 		width: 18
 	},
+	textView: {
+		textAlign: 'center',
+		top: 65,
+		color: '#000',
+		fontWeight: 'bold',
+		fontSize:16
+	},
   container: {
     flex:1,
     backgroundColor: '#efefef'
   },
-  images:{
-		flexDirection:'row',
-		flexWrap: 'wrap',
-		top:90
+  appointments:{
+  	flexDirection:'row',
+  	justifyContent:'center',
+  	top:50,
+  	padding:10,
   },
-  customerImages:{
-		width:width/3.9,
-		height:width/3.9,
-		margin:3
+  button:{
+  	flexDirection:'row',
+  	justifyContent:'space-around',
+  	top:65
   },
-  textView: {
-		textAlign: 'center',
-		top: 80,
-		color: '#000',
-		fontWeight: 'bold'
-	}
+  column:{
+  	flexDirection:'column',
+  	justifyContent:'space-around',
+  	top:13,
+  	width:width/3.0,
+  	borderRightWidth:0.5,
+  	borderRightColor:'black',
+  	borderStyle:'dotted'
+  },
+  text:{
+  	fontWeight:'700',
+  	color:'black',
+  	fontSize:12,
+  	alignSelf:'center'
+  },
+  textValue:{
+  	color:'black',
+  	fontSize:12,
+  	alignSelf:'center'
+  }
 });

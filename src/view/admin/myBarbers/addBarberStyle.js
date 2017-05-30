@@ -33,11 +33,13 @@ module.exports = StyleSheet.create({
 		zIndex:100
 	},
 	imageClose: {
+		height: 18,
+		width: 18
+	},
+	closeImage: {
 		position: 'absolute',
 		right: 10,
 		top: 20,
-		height: 18,
-		width: 18
 	},
 	textView: {
 		textAlign: 'center',
